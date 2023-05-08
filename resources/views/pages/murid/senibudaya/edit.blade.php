@@ -4,12 +4,12 @@
     <div class="mb-3 mt-2">
         <label for="nis" class="form-label">Nis</label>
         <input type="number" class="form-control" id="nis" name="nis" placeholder="ex. 12098768" required autofocus
-            autocomplete="off" value="{{ $edit->nis }}">
+            autocomplete="off" value="{{ $edit->nis }}" readonly>
     </div>
     <div class="mb-3 mt-2">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="ex. johndoe" required autofocus
-            autocomplete="off" value="{{ $edit->name }}">
+            autocomplete="off" value="{{ $edit->name }}" readonly>
     </div>
     <div class="mb-3 mt-2">
         <label for="rombel_id" class="form-label">Rombel</label>

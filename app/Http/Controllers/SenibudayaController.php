@@ -7,11 +7,14 @@ use App\Models\MasterRayon;
 use App\Models\MasterRombel;
 use App\Models\MasterSenbud;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class SenibudayaController extends Controller
 {
     public function index()
     {
+        $name =Session::get('name');
+        $username =Session::get('username');
         $senbud =SeniBudaya::all();
         $rombel =MasterRombel::get();
         $rayon =MasterRayon::get();
@@ -21,6 +24,8 @@ class SenibudayaController extends Controller
             'rayon'              =>$rayon,
             'm_senbud'             =>$m_senbud,
             'senbud'             =>$senbud,
+            'name'               =>$name,
+            'username'           =>$username,
         ]);
 
     }

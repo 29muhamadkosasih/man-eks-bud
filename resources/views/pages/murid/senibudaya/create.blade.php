@@ -2,13 +2,13 @@
     @csrf
     <div class="mb-3 mt-2">
         <label for="nis" class="form-label">Nis</label>
-        <input type="number" class="form-control" id="nis" name="nis" placeholder="ex. 12098768" required autofocus
-            autocomplete="off">
+        <input type="number" class="form-control" id="nis" name="nis" placeholder="ex. 12098768" required
+            autocomplete="off" value="{{ $username }}" readonly>
     </div>
     <div class="mb-3 mt-2">
         <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="ex. johndoe" required autofocus
-            autocomplete="off">
+        <input type="text" class="form-control" id="name" name="name" placeholder="ex. johndoe" required
+            autocomplete="off" value="{{ $name }}" readonly>
     </div>
     <div class="mb-3 mt-2">
         <label for="rombel_id" class="form-label">Rombel</label>

@@ -20,6 +20,7 @@ class LoginController extends Controller
             Session::put('login', TRUE);
 
             Session::put('name', $data->name);
+            Session::put('username', $data->username);
 
             if ($data->password==$password) {
                 if ($data->role=="admin") {

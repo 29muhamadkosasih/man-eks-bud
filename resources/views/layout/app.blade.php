@@ -26,6 +26,7 @@
 </head>
 @php
     $user =Session::get('name');
+    $user2 =Session::get('username');
 @endphp
 
 <body>

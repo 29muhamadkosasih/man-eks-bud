@@ -8,6 +8,7 @@ use App\Models\MasterRombel;
 use Illuminate\Http\Request;
 use App\Models\Ekstrakurikuler;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Database\Eloquent\Collection;
 
 class EkstrakurikulerController extends Controller
@@ -15,6 +16,10 @@ class EkstrakurikulerController extends Controller
 
     public function index()
     {
+        $name =Session::get('name');
+        $username =Session::get('username');
+
+        // dd($name);
         $ekstrakurikuler =Ekstrakurikuler::all();
         $rombel =MasterRombel::get();
         $rayon =MasterRayon::get();
@@ -24,6 +29,8 @@ class EkstrakurikulerController extends Controller
             'rayon'              =>$rayon,
             'ekskul'             =>$ekskul,
             'ekstrakurikuler'    =>$ekstrakurikuler,
+            'name'               =>$name,
+            'username'           =>$username,
         ]);
     }
 
