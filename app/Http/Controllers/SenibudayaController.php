@@ -15,7 +15,8 @@ class SenibudayaController extends Controller
     {
         $name =Session::get('name');
         $username =Session::get('username');
-        $senbud =SeniBudaya::all();
+        // dd($username);
+        $senbud =SeniBudaya::where('name', $name)->get();
         $rombel =MasterRombel::get();
         $rayon =MasterRayon::get();
         $m_senbud =MasterSenbud::get();

@@ -7,9 +7,9 @@
             <div class="card-header">
 
                 @if (isset($edit))
-                <h5 class="card-title mb-0">Edit Rayon</h5>
+                <h5 class="card-title mb-0">Edit Master Rayon</h5>
                 @else
-                <h5 class="card-title mb-0">Create Rayon</h5>
+                <h5 class="card-title mb-0">Create Master Rayon</h5>
                 @endif
 
             </div>
@@ -27,7 +27,7 @@
     <div class="col-md-8">
         <div class="card flex-fill">
             <div class="card-header">
-                <h5 class="card-title mb-0">List Rayon</h5>
+                <h5 class="card-title mb-0">List Master Rayon</h5>
             </div>
             <table class="table table-hover dataTable zero-configuration my-0">
                 <thead>

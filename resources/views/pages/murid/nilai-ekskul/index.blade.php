@@ -27,7 +27,7 @@
                            <td><span class="badge bg-secondary">Belum Di Nilai</span></td>
                             @break
                             @default
-                            <td>{{ $data->nilai }}</td>
+                            <td><span class="badge bg-success">{{ $data->nilai }}</span></td>
                              @endswitch</td>
                     </tr>
                     @endforeach

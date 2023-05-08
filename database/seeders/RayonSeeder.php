@@ -22,17 +22,5 @@ class RayonSeeder extends Seeder
             'name_rayon' => ('Ciawi 2'),
             'pembimbing' => ('Acep Rahmat ')
         ]);
-        DB::table('master_rayon')->insert([
-            'name_rayon' => ('Ciawi 3'),
-            'pembimbing' => ('Muslih ')
-        ]);
-        DB::table('master_rayon')->insert([
-            'name_rayon' => ('Ciawi 5'),
-            'pembimbing' => ('Yayu')
-        ]);
-        DB::table('master_rayon')->insert([
-            'name_rayon' => ('Ciawi 4'),
-            'pembimbing' => ('Asiah ')
-        ]);
     }
 }

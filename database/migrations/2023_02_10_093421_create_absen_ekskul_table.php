@@ -19,7 +19,11 @@ class CreateAbsenEkskulTable extends Migration
             $table->string('status');
             $table->string('nilai');
             $table->time('time');
-            $table->foreign('nis_id')->references('id')->on('ekskul');
+            $table->string('name');
+            $table->foreign('nis_id')->references('id')
+            ->on('ekskul')
+            ->onDelete('cascade')
+            ->change();;
 
             $table->timestamps();
         });

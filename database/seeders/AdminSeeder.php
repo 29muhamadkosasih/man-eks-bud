@@ -15,22 +15,28 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('admin')->insert([
-            'name' => ('Admin Admin'),
+        DB::table('users')->insert([
+            'name' => ('Admin'),
             'username' => ('admin '),
             'password' => ('admin'),
             'role' => ('admin'),
         ]);
-        DB::table('admin')->insert([
-            'name' => ('Guru Guru'),
+        DB::table('users')->insert([
+            'name' => ('Guru'),
             'username' => ('guru '),
             'password' => ('guru'),
             'role' => ('guru'),
         ]);
-        DB::table('admin')->insert([
-            'name' => ('Murid Murid'),
-            'username' => ('murid '),
-            'password' => ('murid'),
+        DB::table('users')->insert([
+            'name' => ('Muhamad Kosasih'),
+            'username' => ('12007932 '),
+            'password' => ('12007932'),
+            'role' => ('murid'),
+        ]);
+        DB::table('users')->insert([
+            'name' => ('Abdul Mana'),
+            'username' => ('12008181 '),
+            'password' => ('12008181'),
             'role' => ('murid'),
         ]);
     }

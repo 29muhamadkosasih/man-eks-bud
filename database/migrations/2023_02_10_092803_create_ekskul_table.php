@@ -22,9 +22,9 @@ class CreateEkskulTable extends Migration
             $table->unsignedBigInteger('ekskul_id');
             $table->string('alasan');
             $table->integer('jumlah');
-            $table->foreign('ekskul_id')->references('id')->on('master_ekskul');
-            $table->foreign('rombel_id')->references('id')->on('master_rombel');
-            $table->foreign('rayon_id')->references('id')->on('master_rayon');
+            $table->foreign('ekskul_id')->references('id')->on('master_ekskul')->onDelete('cascade')->change();
+            $table->foreign('rombel_id')->references('id')->on('master_rombel')->onDelete('cascade')->change();
+            $table->foreign('rayon_id')->references('id')->on('master_rayon')->onDelete('cascade')->change();
             $table->timestamps();
         });
     }

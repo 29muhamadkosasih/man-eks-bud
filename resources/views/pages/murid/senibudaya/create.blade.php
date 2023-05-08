@@ -2,7 +2,7 @@
     @csrf
     <div class="mb-3 mt-2">
         <label for="nis" class="form-label">Nis</label>
-        <input type="number" class="form-control" id="nis" name="nis" placeholder="ex. 12098768" required
+        <input type="text" class="form-control" id="nis" name="nis" placeholder="ex. 12098768" required
             autocomplete="off" value="{{ $username }}" readonly>
     </div>
     <div class="mb-3 mt-2">

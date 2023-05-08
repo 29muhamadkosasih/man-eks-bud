@@ -7,13 +7,16 @@ use Illuminate\Http\Request;
 use App\Models\AbsensiEkskul;
 use App\Models\AbsensiSenbud;
 use App\Models\Ekstrakurikuler;
+use Illuminate\Support\Facades\Session;
 
 class SiswaController extends Controller
 {
     public function nilaiEkskul()
     {
+        $name =Session::get('name');
+
         $ekskul =Ekstrakurikuler::get();
-        $nilaiekskul = AbsensiEkskul::all();
+        $nilaiekskul = AbsensiEkskul::where('name', $name)->get();
         return view ('pages.murid.nilai-ekskul.index',[
             'nilaiekskul'      =>$nilaiekskul,
             'ekskul'           =>$ekskul,
@@ -22,8 +25,10 @@ class SiswaController extends Controller
     }
     public function inputSenbud()
     {
+        $name =Session::get('name');
+
         $senbud =SeniBudaya::get();
-        $nilaisenbud = AbsensiSenbud::all();
+        $nilaisenbud = AbsensiSenbud::where('name', $name)->get();
         return view ('pages.murid.nilai-senbud.index',[
             'nilaisenbud'      =>$nilaisenbud,
             'senbud'           =>$senbud,

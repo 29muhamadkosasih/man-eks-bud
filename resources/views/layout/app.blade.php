@@ -36,7 +36,7 @@
                 <a class="sidebar-brand" href="index.html">
 
                     <span class="align-middle"><img src="{{ asset('img/avatars/wikrama.png') }}" alt=""
-                            width="35">&nbsp; SIM EKSKUL & SENI BUDAYA</span>
+                            width="35">&nbsp; SMK WIKRAMA</span>
                 </a>
 
 
@@ -55,16 +55,16 @@
 
                     <li class="sidebar-item {{ (request()->is('admin')) ? 'active' : '' }}">
                         <a class="sidebar-link" href="{{ route('admin.index') }}">
-                            <i class="align-middle" data-feather="user"></i> <span class="align-middle">Admin</span>
+                            <i class="align-middle" data-feather="user"></i> <span class="align-middle">Users</span>
                         </a>
                     </li>
 
-                    <li class="sidebar-item {{ (request()->is('laporan-admin')) ? 'active' : '' }}">
+                    {{-- <li class="sidebar-item {{ (request()->is('laporan-admin')) ? 'active' : '' }}">
                         <a class="sidebar-link" href="{{ url('/laporan-admin') }}">
                             <i class="align-middle" data-feather="book"></i> <span class="align-middle">Laporan
                                 Admin</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     @elseif(Session::get('role') == 'guru')
 
@@ -113,12 +113,12 @@
                         </a>
                     </li>
 
-                    <li class="sidebar-item {{ (request()->is('laporan-guru')) ? 'active' : '' }}">
+                    {{-- <li class="sidebar-item {{ (request()->is('laporan-guru')) ? 'active' : '' }}">
                         <a class="sidebar-link" href="{{ url('/laporan-guru') }}">
                             <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Laporan
                                 guru</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     @else
 
@@ -172,12 +172,12 @@
                         </a>
                     </li>
 
-                    <li class="sidebar-item {{ (request()->is('laporan-murid')) ? 'active' : '' }}">
+                    {{-- <li class="sidebar-item {{ (request()->is('laporan-murid')) ? 'active' : '' }}">
                         <a class="sidebar-link" href="{{ url('/laporan-murid') }}">
                             <i class="align-middle" data-feather="book"></i> <span class="align-middle">Laporan
                                 murid</span>
                         </a>
-                    </li>
+                    </li> --}}
                     @endif
                 </ul>
 
@@ -189,6 +189,7 @@
                 <a class="sidebar-toggle js-sidebar-toggle">
                     <i class="hamburger align-self-center"></i>
                 </a>
+                <h3 class="m-2"><strong>MANAGEMENT</strong> EKSTRAKURIKULER & SENI BUDAYA</h3>
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
@@ -200,7 +201,7 @@
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
                                 data-bs-toggle="dropdown">
                                 <img src="https://ui-avatars.com/api/?name={{ $user }}?background=random"
-                                    class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span
+                                    class="avatar img-fluid rounded me-1" alt="{{ $user }}" /> <span
                                     class="text-dark">{{ $user }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">

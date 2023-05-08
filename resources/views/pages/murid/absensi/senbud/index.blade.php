@@ -7,9 +7,9 @@
             <div class="card-header">
 
                 @if (isset($edit))
-                <h5 class="card-title mb-0">Edit User</h5>
+                <h5 class="card-title mb-0">Edit Absensi Kehadiran</h5>
                 @else
-                <h5 class="card-title mb-0">Create User</h5>
+                <h5 class="card-title mb-0">Create Absensi Kehadiran</h5>
                 @endif
 
             </div>
@@ -27,7 +27,7 @@
     <div class="col-md-8">
         <div class="card flex-fill">
             <div class="card-header">
-                <h5 class="card-title mb-0">List User</h5>
+                <h5 class="card-title mb-0">List Absensi Kehadiran</h5>
             </div>
             <table class="table table-hover dataTable zero-configuration my-0">
                 <thead>

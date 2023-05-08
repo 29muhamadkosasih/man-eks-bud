@@ -19,8 +19,8 @@ class EkstrakurikulerController extends Controller
         $name =Session::get('name');
         $username =Session::get('username');
 
-        // dd($name);
-        $ekstrakurikuler =Ekstrakurikuler::all();
+        // dd($username);
+        $ekstrakurikuler =Ekstrakurikuler::where('name', $name)->get();
         $rombel =MasterRombel::get();
         $rayon =MasterRayon::get();
         $ekskul =MasterEkskul::get();
