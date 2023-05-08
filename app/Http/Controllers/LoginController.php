@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
-    public function login(Request $request) {
+    public function login(Request $request)
+     {
         $username = $request->username;
         $password = $request->password;
         $data= Admin::where('username', $username)->first();
@@ -19,8 +20,6 @@ class LoginController extends Controller
             Session::put('login', TRUE);
 
             Session::put('name', $data->name);
-
-
 
             if ($data->password==$password) {
                 if ($data->role=="admin") {

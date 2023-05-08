@@ -11,7 +11,7 @@ class Ekstrakurikuler extends Model
     protected $table = 'ekskul';
     protected $guarded = [];
 
-    public function ekskul()
+    public function ekskul()    
     {
         return $this->belongsTo(MasterEkskul::class, 'ekskul_id');
     }

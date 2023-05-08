@@ -10,17 +10,18 @@
             <div class="container-fluid">
                 <form action="{{ route('input-nilai.update', $edit->id) }}" method="POST" enctype="multipart/form-data">
                     @method('PUT')
-                    @csrf
+                    @csrf   
                     <h5 class="card-title mb-2" style="text-align: center">{{ $edit->ekstrakurikuler->name }}</h5>
                     <div class="text-muted mb-2" style="text-align: center">{{ $edit->ekstrakurikuler->nis }}</div>
                     <ul class="list-unstyled mb-0">
-                        <li class="mb-1"><span data-feather="home" class="feather-sm me-1"></span> Rombel <a
-                                href="#">: &nbsp; {{ $edit->ekstrakurikuler->rombel->name_rombel }}</a></li>
+                        <li class="mb-1"><span data-feather="home" class="feather-sm me-1"></span> Rombel <a href="#">:
+                                &nbsp; {{ $edit->ekstrakurikuler->rombel->name_rombel }}</a></li>
 
                         <li class="mb-1"><span data-feather="briefcase" class="feather-sm me-1"></span> Rayon <a
                                 href="#">: &nbsp; {{ $edit->ekstrakurikuler->rayon->name_rayon }}</a></li>
-                        <li class="mb-1"><span data-feather="map-pin" class="feather-sm me-1"></span> Name Ekstrakurikuler <a
-                                href="#">: &nbsp; {{ $edit->ekstrakurikuler->ekskul->name_ekskul }}</a></li>
+                        <li class="mb-1"><span data-feather="map-pin" class="feather-sm me-1"></span> Name
+                            Ekstrakurikuler <a href="#">: &nbsp; {{ $edit->ekstrakurikuler->ekskul->name_ekskul }}</a>
+                        </li>
                         <li class="mb-3"><span data-feather="map-pin" class="feather-sm me-1"></span> Jam Kedatangan <a
                                 href="#">: &nbsp; {{ $edit->time }}</a></li>
                     </ul>

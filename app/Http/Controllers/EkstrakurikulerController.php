@@ -61,16 +61,6 @@ class EkstrakurikulerController extends Controller
 
         ]);
 
-
-        // Ekstrakurikuler::create($request->all());
-        // dd($data);
-        // $data - 1 ;
-        // dd($data);
-        // $datam = 1;
-        // // dd($datum);
-
-        // $jumlah = $data - $datam;
-
         $menu->update([
             'kouta' => $ketersediaan
         ]);
