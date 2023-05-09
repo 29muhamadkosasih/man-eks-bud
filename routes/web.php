@@ -52,6 +52,9 @@ Route::get('/dashboard-student', [DashboardController::class, 'dashboardStudent'
 Route::get('/dashboard-teacher', [DashboardController::class, 'dashboardTeacher'])->name('/dashboard-teacher');
 
 Route::get('/laporan-admin', [AdminController::class, 'laporan'])->name('/laporan-admin');
+Route::get('/ImportCSV', [AdminController::class, 'createImport'])->name('/create.import');
+Route::post('import-file', [AdminController::class, 'import'])->name('import');
+
 Route::get('/laporan-guru', [GuruController::class, 'laporan'])->name('/laporan-guru');
 Route::get('/laporan-murid', [SiswaController::class, 'laporan'])->name('/laporan-murid');
 

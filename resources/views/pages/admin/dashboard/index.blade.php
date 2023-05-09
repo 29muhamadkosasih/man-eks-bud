@@ -94,7 +94,6 @@
                             <th>Name</th>
                             <th>Username</th>
                             <th>Role</th>
-                            <th>Created At</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -116,7 +115,6 @@
                             <td><span class="badge bg-warning">Admin</span></td>
 
                             @endswitch
-                            <td>{{ $dataadmin->created_at }}</td>
                         </tr>
                         @endforeach
                     </tbody>

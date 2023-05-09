@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Imports\SiswaImport;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -24,8 +28,8 @@ class AdminController extends Controller
 
         Admin::create($request->all());
 
-        return redirect()->route('admin.index')
-                        ->with('success','Berhasil Menyimpan !');
+        Alert::success('Congratulation', 'Data Created Successfully');
+        return redirect()->route('admin.index');
     }
 
     public function edit($id)
@@ -44,16 +48,16 @@ class AdminController extends Controller
         // dd($id);
         $admin->update($input);
 
-        return redirect()->route('admin.index')
-                             ->with('success','👋 Update data successfuly !   Jelly oat cake candy jelly');
+        Alert::success('Congratulation', 'Data Update Successfully');
+        return redirect()->route('admin.index');
     }
 
     public function destroy($id)
     {
         $delete = Admin::find($id);
         $delete->delete();
-        return redirect()->route('admin.index')
-                            ->with('success','👋 Delete data successfuly !   Jelly oat cake candy jelly');
+        Alert::success('Congratulation', 'Data Delete Successfully');
+        return redirect()->route('admin.index');
     }
 
     public function dashboard()
@@ -65,5 +69,21 @@ class AdminController extends Controller
     {
         $dataadmin = Admin::all();
         return view('pages.admin.laporan.index', compact('dataadmin'));
+    }
+
+    public function createImport()
+    {
+        return view('pages.admin.import');
+    }
+
+    public function import(Request $request)
+    {
+        $fileName =request()->file->getClientOriginalName();
+        request()->file('file')->storeAs('dataSiswa', $fileName, 'public');
+        // dd($fileName);
+        Excel::import(new SiswaImport, $request->file);
+        // dd($request);
+        Alert::success('Congratulation', 'File Upload Successfully');
+        return redirect()->route('admin.index');
     }
 }

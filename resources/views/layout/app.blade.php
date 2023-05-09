@@ -23,6 +23,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/tables/datatable/buttons.bootstrap5.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/tables/datatable/rowGroup.bootstrap5.min.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+
+        {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
+
 </head>
 @php
     $user =Session::get('name');
@@ -30,6 +37,7 @@
 @endphp
 
 <body>
+    @include('sweetalert::alert')
     <div class="wrapper">
         <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
@@ -53,7 +61,7 @@
                         </a>
                     </li>
 
-                    <li class="sidebar-item {{ (request()->is('admin')) ? 'active' : '' }}">
+                    <li class="sidebar-item {{ (request()->is('admin','ImportCSV')) ? 'active' : '' }}">
                         <a class="sidebar-link" href="{{ route('admin.index') }}">
                             <i class="align-middle" data-feather="user"></i> <span class="align-middle">Users</span>
                         </a>
