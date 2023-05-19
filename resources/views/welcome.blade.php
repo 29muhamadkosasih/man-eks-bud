@@ -23,6 +23,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     <main class="d-flex w-100">
         <div class="container d-flex flex-column">
             <div class="row vh-100">
@@ -44,7 +45,8 @@
                                         <div class="mb-3">
                                             <label class="form-label">Username</label>
                                             <input class="form-control form-control-lg" type="text" name="username"
-                                                placeholder="Enter your username" required autofocus autocomplete="off" />
+                                                placeholder="Enter your username" required autofocus
+                                                autocomplete="off" />
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Password</label>
@@ -52,18 +54,19 @@
                                                 placeholder="Enter your password" required autocomplete="off" />
                                         </div>
                                         <div>
-                                            <label class="form-check">
+                                            {{-- <label class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="remember-me"
                                                     name="remember-me" checked>
                                                 <span class="form-check-label">
                                                     Remember me next time
                                                 </span>
-                                            </label>
+                                            </label> --}}
                                         </div>
                                         <div class="text-center mt-3">
-                                            {{-- <a href="{{ route('/dashboard-admin') }}" class="btn btn-lg btn-primary">Sign
+                                            {{-- <a href="{{ route('/dashboard-admin') }}"
+                                                class="btn btn-lg btn-primary">Sign
                                                 in</a> --}}
-                                         <button type="submit" class="btn btn-lg btn-primary">Sign in</button>
+                                            <button type="submit" class="btn btn-lg btn-primary">Sign in</button>
                                         </div>
                                     </form>
                                 </div>
@@ -77,7 +80,6 @@
     </main>
 
     <script src="js/app.js"></script>
-
 </body>
 
 </html>

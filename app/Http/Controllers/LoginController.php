@@ -34,6 +34,8 @@ class LoginController extends Controller
                     $admin =Admin::where('role', 'admin')->count();
                     $murid =Admin::where('role', 'murid')->count();
                     $guru =Admin::where('role', 'guru')->count();
+
+                    toast('Login successfully','success');
                     return view('pages.admin.dashboard.index',[
                         'dataadmin'   => $dataadmin,
                         'admin'   => $admin,
@@ -48,6 +50,7 @@ class LoginController extends Controller
                     $senbud =MasterSenbud::all()->count();
                     $rayon =MasterRayon::all()->count();
                     $rombel =MasterRombel::all()->count();
+                    toast('Login successfully','success');
                     return view('pages.guru.dashboard.index',[
                         'ekskul' =>$ekskul,
                         'senbud' =>$senbud,
@@ -55,21 +58,26 @@ class LoginController extends Controller
                         'rombel' =>$rombel,
                     ]);
                 }else{
+                    toast('Login successfully','success');
                     Session::put('murid',$data->role);
                     return redirect('dashboard-student');
                 }
 
             }
             else {
-                return redirect()->back()->with('danger','Password Salah');
+                toast('Oops... Password Salah','warning');
+                return redirect()->back();
             }
         }else{
-            return redirect()->back()->with('danger','Username Tidak Ditemukan');
+            toast('Oops... Username Tidak Ditemukan','warning');
+            return redirect()->back();
         }
     }
 
     public function logout(){
         Session::put('login',FALSE);
         return redirect('/');
-    }
+
+
+  }
 }

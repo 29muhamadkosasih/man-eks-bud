@@ -36,5 +36,6 @@ class InputNilaiController extends Controller
         return redirect()->route('input-nilai.index')
                              ->with('success','👋 Update data successfuly !   Jelly oat cake candy jelly');
     }
+    
 
 }
